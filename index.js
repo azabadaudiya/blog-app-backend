@@ -6,7 +6,7 @@ import authRoutes from "./routes/blog.js";
 
 
 const app=Express();
-// const PORT=8000;
+const PORT= process.env.PORT || 8081;
 
 // connectToMongo();
 
@@ -20,6 +20,6 @@ app.get("/",(req,res) => {
 
 app.use("/api/v1",authRoutes);
 
-app.listen(8081,() => {
+app.listen(PORT,() => {
     console.log("server is listening");
 });
